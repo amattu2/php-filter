@@ -7,6 +7,7 @@ Include the **/classes/filter.class.php** file
 require(dirname(__FILE__) . "/classes/filter.class.php");
 ```
 
+**Methods**
 ```
 Filter::*input*(string $var)
 ```
