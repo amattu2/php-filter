@@ -7,53 +7,36 @@ Include the **/classes/filter.class.php** file
 require(dirname(__FILE__) . "/classes/filter.class.php");
 ```
 
-
+```
 Filter::*input*(string $var)
-
+```
 Remove unprintable characters, HTML entities, and slashes.
-```
-Filter::input()
-```
 
-
+```
 Filter::*nonNumeric*(int|string|double|float $var)
-
+```
 Remove non-numeric characters
-```
-Filter::nonNumeric()
-```
 
 
+```
 Filter::*nonAlpha*(mixed $var)
-
+```
 Remove non-alpha (a-zA-Z) characters
-```
-Filter::nonAlpha()
-```
 
-
+```
 Filter::*nonAlphaNumeric*(mixed $var)
-
+```
 Remove non-alphanumeric (a-zA-Z0-9) characters
-```
-Filter::nonAlphaNumeric()
-```
 
-
+```
 Filter::*fileName*(string $var)
-
+```
 Replace whitespace characters with a dash (-)
-```
-Filter::fileName()
-```
 
-
+```
 Filter::*number*(int|string $var)
-
+```
 Format a 10 digit phone number (XXX-XXX-XXXX)
-```
-Filter::number()
-```
 
 # Previews
 N/A
