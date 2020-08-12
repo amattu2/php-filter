@@ -1,13 +1,9 @@
 <?php
 /*
-	Produced 2019
-	By https://github.com/amattu2
+	Produced 2020
+	By https://amattu.com/links/github
 	Copy Alec M.
 	License GNU Affero General Public License v3.0
-*/
-
-/*
-	Built on PHP 7.2.24 for Ubuntu
 */
 
 class Filter {
@@ -19,16 +15,19 @@ class Filter {
 	* @throws TypeError
 	**/
 	public static function input(string $input) : string {
+		// Variables
 		$input = strip_tags($input);
 		$input = preg_replace('/[^\00-\255]+/u', '', $input);
 		$input = stripslashes($input);
+
+		// Return
 		return $input;
 	}
 
 	/**
 	* Remove Non-numeric characters from a string
 	*
-	* @param int|string|double|float $input
+	* @param mixed $input
 	* @return int|double|float filtered
 	* @throws None
 	**/
@@ -106,7 +105,7 @@ class Filter {
 	}
 
 	/**
-	* Remove invalid characters from string|int and format number
+	* Remove invalid characters from string|int and format phone number
 	*
 	* @param string|int $input
 	* @return string filtered
@@ -127,6 +126,19 @@ class Filter {
 
 		// Return
 		return preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "$1-$2-$3", $input);
+	}
+
+	/**
+	 * Remove two or more spaces from a string
+	 *
+	 * @param string $input
+	 * @return string replaced
+	 * @throws TypeError
+	 * @author Alec M. <https://amattu.com>
+	 * @date 2020-07-24T07:56:21-040
+	 */
+	public static function spaces(string $input) : string {
+		return preg_replace('/  +/', ' ', $input);
 	}
 }
 ?>
