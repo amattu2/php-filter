@@ -6,8 +6,10 @@
 	License GNU Affero General Public License v3.0
 */
 
+use Filter\Filter;
+
 // Files
-require(dirname(__FILE__) . "/classes/filter.class.php");
+require(dirname(__FILE__) . "/src/Filter.php");
 
 // Test Cases
 test("input", Filter::input("Wo/p wo\p \nnewline <b>Hu</b>"), "Wo/p wo\p \nnewline <b>Hu</b>", true);
